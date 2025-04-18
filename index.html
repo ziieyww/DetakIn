@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DetakIn - Skrining Kesehatan Jantungmu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #800000; /* Merah maroon */
+      color: #FFF5E1; /* Cream */
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #4B0000;
+      padding: 10px 20px;
+    }
+    header img {
+      height: 50px;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 1.5em;
+      margin: 0;
+    }
+    form {
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #FFF5E1;
+      color: #800000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yuk, Cek Kesehatan Jantungmu dengan Skrining Penyakit Jantung Koroner!</h1>
+    <img src="logo.png">
+  </header>
+  <form id="quizForm">
+    <label>1. Hi, Ladies and Gentlemen. Jadi kamu adalah...
+      <select name="q1">
+        <option value="0">Perempuan</option>
+        <option value="1">Laki-laki</option>
+      </select>
+    </label>
+    <label>2. Berapa usia mu?
+      <select name="q2">
+        <option value="0">&lt; 40 tahun</option>
+        <option value="1">>40 tahun</option>
+      </select>
+    </label>
+    <label>3. Coba hitung BMI mu. Bisa melalui kalkulator bawaan handphone (jika ada), website bmi counter, atau manual (keren, sih, kalau mau). Rumusnya bisa cek di google yah! Kalau sudah jawab kategorinya di bawah ini!
+      <select name="q3">
+        <option value="0">Underweight</option>
+        <option value="0">Normal</option>
+        <option value="1">Overweight</option>
+        <option value="2">Obesitas I</option>
+        <option value="3">Obesitas II</option>
+      </select>
+    </label>
+    <label>4. Apakah kamu pernah didiagnosis hipertensi (darah tinggi) dalam setahun terakhir?
+      <select name="q4">
+        <option value="1">Iya</option>
+        <option value="0">Tidak</option>
+      </select>
+    </label>
+    <label>5. Terus... Apakah kamu juga pernah didiagnosis kadar kolesterol total/HDL/LDL/Trigleserida yang abnormal setahun terakhir?
+      <select name="q5">
+        <option value="1">Pernah</option>
+        <option value="0">Tidak pernah</option>
+      </select>
+    </label>
+    <label>6. Next, apakah kamu pernah menderita diabetes melitus sebelumnya dalam setahun terakhir?
+      <select name="q6">
+        <option value="1">Iya</option>
+        <option value="0">Tidak</option>
+      </select>
+    </label>
+    <label>7. Apakah dari keluarga kamu ada yang mempunyai riwayat penyakit jantung?
+      <select name="q7">
+        <option value="1">Iya</option>
+        <option value="0">Tidak</option>
+      </select>
+    </label>
+    <label>8. Apakah kamu mengonsumsi alcohol berlebih? (Berlebih di sini adalah minum alcohol lebih dari 3 kali/minggu untuk Wanita dan lebih dari 5 kali/ minggu untuk pria).
+      <select name="q8">
+        <option value="1">Iya</option>
+        <option value="0">Tidak</option>
+      </select>
+    </label>
+    <label>9. Seaktif apa kamu melakukan aktivitas fisik (kaum rebahan jujur ya wkwk)
+      <select name="q9">
+        <option value="2">Ringan (jalan santai, menyapu, peregangan, dsb)</option>
+        <option value="1">Sedang (jalan cepat, aerobik, berenang, dsb)</option>
+        <option value="0">Tinggi (jogging, lari, basket, badminton, dsb)</option>
+      </select>
+    </label>
+    <label>10. Apakah kamu merokok?
+      <select name="q10">
+        <option value="1">Iya</option>
+        <option value="0">Tidak</option>
+      </select>
+    </label>
+    <label>11. Berapa lama kamu tidur dalam sehari?
+      <select name="q11">
+        <option value="1">&le; 6 jam</option>
+        <option value="0">&gt; 6 jam</option>
+      </select>
+    </label>
+    <label>12. Seberapa banyak waktu dalam sehari yang kamu habiskan untuk duduk atau berbaring (di luar waktu tidur)?
+      <select name="q12">
+        <option value="0">Rendah (kurang dari 2 jam)</option>
+        <option value="1">Sedang (2-5 jam)</option>
+        <option value="2">Tinggi (lebih dari 5 jam)</option>
+      </select>
+    </label>
+    <label>13. Pola makanmu sehat, gak? (Berikut prinsip pola makan sehat:
+1. Makan makanan tinggi serat, rendah lemak, gula, dan garam.
+2. Pilih karbohidrat yang berserat tinggi.
+3. Makan 5 porsi sayur dan buah dengan warna yang berbeda setiap hari.
+4. Minum air yang cukup (minimal 8 gelas sehari).
+5. Pastikan makananmu seimbang dengan cukup karbohidrat, protein, lemak, vitamin, dan mineral.
+6. Lebih baik makan makanan yang masih dekat dengan bentuk aslinya dari alam.)
+      <select name="q13">
+        <option value="0">Sehat</option>
+        <option value="1">Tidak sehat</option>
+      </select>
+    </label>
+    <button type="submit">Lihat Hasil</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      let score = 0;
+      const adviceList = [];
+
+      const saran = {
+        q1: 'Kamu, sebgai laki-laki memiliki risiko lebih tinggi, jaga pola hidup sehat dan lakukan cek rutin, ya.',
+        q2: 'Usia 40-58 tahun dapatmeningkatkan risiko, lakukan screening secara berkala dan gaya hidup aktif.',
+        q3: [
+          null,
+          'Kamu dikategorikan sebagai Overweight. Kurangi asupan makanan tinggi kalori, lemak jenuh, dan gula. Konsultasikan dengan dokter atau ahli gizi untuk mendapatkan panduan yang tepat.',
+          'Kamu dikategorikan sebagai Obesitas I. Sangat disarankan untuk berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan rencana penurunan berat badan yang komprehensif dan aman.',
+          'Kamu dikategorikan sebagai Obesitas II. Sangat disarankan untuk berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan rencana penurunan berat badan yang komprehensif dan aman.',
+        ],
+        q4: 'Kelola hipertensi mu dengan obat, pola makan rendah garam, rajin cek tekanan darah, dan olahraga.',
+        q5: 'Ikuti anjuran dokter untuk mengelola kadar kolesterol dan trigliserida mu. Mungkin akan melibatkan perubahan pola makan (kurangi lemak jenuh dan trans, tingkatkan serat), olahraga teratur, dan mungkin penggunaan obat-obatan.',
+        q6: 'Kelola diabetes mu dengan baik melalui pengaturan pola makan, aktivitas fisik teratur, pemantauan kadar gula darah, dan penggunaan obat-obatan sesuai anjuran dokter.',
+        q7: 'Jika ada riwayat penyakit kardiovaskular dalam keluarga, kamu mungkin memiliki risiko yang lebih tinggi. Lebih perhatikan faktor risiko kamu dengan menjaga gaya hidup sehat: tidak merokok, menjaga tekanan darah dan kolesterol normal, berolahraga teratur, dan mengelola stres.',
+        q8: 'Kurangi konsumsi alkohol untuk menurunkan risiko jantung, ya. Jika kamu kesulitan, pertimbangkan untuk mencari dukungan dari profesional atau kelompok dukungan. Kasihan jantungnya :(.',
+        q9: [
+          'Tingkatkan frekuensi, durasi, dan intensitas aktivitas fisik Anda secara bertahap. Targetkan setidaknya 150 menit aktivitas fisik intensitas sedang atau 75 menit aktivitas fisik intensitas tinggi per minggu, atau kombinasi keduanya. Contohnya, Anda bisa mencoba berjalan cepat selama 30 menit hampir setiap hari, bersepeda santai, atau berenang..',
+          'Aktivitas fisik mu cukup baik, tapi bisa ditingkatkan untuk hasil lebih optimal.'
+        ],
+        q10: 'Merokok sangat meningkatkan risiko, pertimbangkan untuk berhenti dengan mencari cara sehat untuk mengatasi keinginan merokok. Bisa berupa mengunyah permen karet bebas gula, makan buah atau sayuran, minum air, atau melakukan aktivitas yang mengalihkan perhatian.',
+        q11: 'Tidur kurang dari 6 jam bisa tingkatkan risiko, jangan lupa tidur cukup, ya!.',
+        q12: [
+          null,
+          'Tingkatkan lagi tingkat aktivitas fisik kamu! Usahakan untuk lebih sering bergerak dan mengurangi waktu duduk yang berkepanjangan.',
+          'Pertahankan tingkat aktivitas kamu dan usahakan untuk tetap aktif bergerak sepanjang hari di luar waktu tidur. Stop mager, okee?'
+        ],
+        q13: 'Perbaiki pola makan Anda dengan meningkatkan konsumsi serat (buah, sayur, biji-bijian), mengurangi asupan lemak jenuh dan trans, gula tambahan, dan garam. Pilih karbohidrat kompleks, konsumsi protein tanpa lemak yang cukup, dan pastikan asupan air yang cukup. Pertimbangkan untuk berkonsultasi dengan ahli gizi untuk mendapatkan panduan yang lebih personal.'
+      };
+
+      let index = 1;
+      for (let [key, value] of data.entries()) {
+        let val = parseInt(value);
+        score += val;
+        if (val > 0) {
+          const s = saran[key];
+          if (Array.isArray(s)) {
+            adviceList.push(s[val] || null);
+          } else {
+            adviceList.push(s);
+          }
+        }
+        index++;
+      }
+
+      let kategori = '';
+      if (score <= 7) kategori = 'Risiko Rendah';
+      else if (score <= 10) kategori = 'Risiko Sedang';
+      else kategori = 'Risiko Tinggi';
+
+      resultDiv.innerHTML = `<h2>${kategori}</h2><p>Total skor: ${score}</p>` +
+        '<h3>Saran:</h3><ul>' + adviceList.map(s => s ? `<li>${s}</li>` : '').join('') + '</ul>';
+    });
+  </script>
+</body>
+</html>
